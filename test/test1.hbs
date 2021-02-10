@@ -1,0 +1,22 @@
+template defined in file.
+Test partials:
+upper({{str}}) = {{> upper str}}
+lower({{str}}) = {{> lower str}}
+neg({{x}}) = {{> neg x}}
+neg({{dy}}) = {{> neg dy}}
+
+Test helpers:
+eq({{str}} "iloveyou") is {{#eq str "iloveyou"}}true{{else}}false{{/eq}}
+eq({{str}} "abCdEf") is {{#eq str "abCdEf"}}true{{else}}false{{/eq}}
+gt({{x}} 9) is {{#gt x 9}}true{{else}}false{{/gt}}
+ge({{x}} 10) is {{#ge x 10}}true{{else}}false{{/ge}}
+lt({dx 3.09}} ) is {{#lt dx 3.09}}true{{else}}false{{/lt}}
+le({{dy}} 4.4) is {{#le dy 4.4}}true{{else}}false{{/le}}
+Repeat 10 times:
+{{#times 4}}
+str is: {{../str}}; {{/times}}
+includes({{str}} {{substr1}}) is {{#includes str substr1}}true{{else}}false{{/includes}}
+includes({{str}} {{substr2}}) is {{#includes str substr2}}true{{else}}false{{/includes}}
+sum({{x}}, {{y}}) = {{#sum x y}}{{/sum}}
+sub({{dx}}, {{dy}}) = {{#sub dx dy}}{{/sub}}
+{{#if vector}}[{{vector}}].at[2] = {{#at vector 2}}{{/at}}{{/if}}

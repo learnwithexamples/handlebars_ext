@@ -1,0 +1,25 @@
+{
+  "name": "handlebars-ext",
+  "version": "0.0.0",
+  "description": "extend handlebars with more utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learnwithexamples/handlebars_ext.git"
+  },
+  "keywords": [
+    "handlebars"
+  ],
+  "author": "Learn with Examples",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/learnwithexamples/handlebars_ext/issues"
+  },
+  "homepage": "https://github.com/learnwithexamples/handlebars_ext#readme",
+  "dependencies": {
+    "handlebars": "^4.7.6"
+  }
+}
