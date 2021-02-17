@@ -27,7 +27,10 @@ const myfunc = (f, copyright = 'learn with examples @ 2021') => { // each json f
     parseFile(f, tpl1, path.join(pt.dir, pt.name + '.txt'), res => copyright + '\n\n' + res);  
   }
 };
+
 walkDir('./test', myfunc); // proc all files under test folder using myfunc
+
+procDir('./test', myfunc); // proc all files directly under test folder using myfunc
 ```
 # Extra partials
 - handlebars.registerPartial('upper', s => s.toUpperCase());
@@ -60,6 +63,9 @@ const parseFile = (filein, template, fileout = null, func = null);
 
 # walk directory
 const walkDir = (dir, callback, ...args);
+
+# proc files directly under directory (no walk inside)
+const procDir = (dir, callback, ...args);
 
 # read and format json
 const readFormatJson = (filename, numspace = 2);

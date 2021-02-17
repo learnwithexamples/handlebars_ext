@@ -1,6 +1,6 @@
 {
   "name": "handlebars-ext",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "extend handlebars with more utilities",
   "main": "index.js",
   "scripts": {

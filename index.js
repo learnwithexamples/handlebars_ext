@@ -36,6 +36,7 @@ const parseFile = (filein, template, fileout = null, func = null) => {
 };
 
 const walkDir = (dir, callback, ...args) => fs.readdirSync(dir).forEach(f => fs.statSync(path.join(dir, f)).isDirectory() ? walkDir(path.join(dir, f), callback) : callback(path.join(dir, f), ...args));
+const procDir = (dir, callback, ...args) => fs.readdirSync(dir).forEach(f => fs.statSync(path.join(dir, f)).isFile() && callback(path.join(dir, f), ...args));
 
 const readFormatJson = (filename, numspace = 2) => {
   try {
@@ -43,4 +44,4 @@ const readFormatJson = (filename, numspace = 2) => {
     return JSON.parse(fs.readFileSync(filename, 'utf8'));
   } catch (e) { console.log(e); return null; }
 }
-module.exports = { handlebars, compile, compileFile, parse, parseFile, readFormatJson, walkDir };
+module.exports = { handlebars, compile, compileFile, parse, parseFile, readFormatJson, walkDir, procDir };
