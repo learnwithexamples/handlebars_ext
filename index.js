@@ -23,6 +23,7 @@ const compileFile = filein => handlebars.compile(fs.readFileSync(filein, 'utf8')
 // parse json to str [and optionally file]
 const parse = (json, template, fileout = null, func = null) => {
   try {
+    if (fileout) { console.log('parse to', fileout); }
     let res = template(json);
     if (func) { res = func(res); }
     if (fileout) { fs.writeFileSync(fileout, res); } else { return res; }
